@@ -34,12 +34,13 @@ public class Service {
 	}
 	
 	public int getfirstnameDuplicate(String name) {
-		int count = 0;
+		/*int count = 0;
 		for(Account account: accountMap.values()) {
 			if(account.getFirstName().equals(name)) {
 				++count;
 			}
 		}
-		return count; 
+		return count; */
+		return (int) accountMap.values().stream().filter(account -> name.equals(account.getFirstName())).count();
 	}
 }
