@@ -32,6 +32,10 @@ public class Service {
 	public HashMap<Integer, Account> getAccountMap(){
 		return accountMap;
 	}
-	
+	public int getfirstnameDuplicate(String string) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+		
 }
 

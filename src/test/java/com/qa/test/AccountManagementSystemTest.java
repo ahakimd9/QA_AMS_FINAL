@@ -17,10 +17,8 @@ public class AccountManagementSystemTest {
 	@Before
 	public void setUp() {
 		service = new Service();
-		
 	}
 	
-
 	@Test
 	public void addAccountTest() {
 		Account Ryan = new Account("Ryan","Prince",1);
@@ -40,10 +38,7 @@ public class AccountManagementSystemTest {
 		Integer expected=1;
 		Integer actual=service.getAccountMap().size();
 		assertEquals(expected,actual);
-		assertFalse(service.getAccountMap().containsValue(Godwin));
-
-		
-		
+		assertFalse(service.getAccountMap().containsValue(Godwin));		
 	}
 	
 	@Test
@@ -55,9 +50,8 @@ public class AccountManagementSystemTest {
 		Account expected = Ryan;
 		Account actual = service.getAccount(1);
 		assertEquals(expected,actual);
-		
-		
-	}
+}
+	
 	@Test
 	public void JSONconversionTest() {
 		Account Ryan = new Account("Ryan","Prince",1);
@@ -69,4 +63,15 @@ public class AccountManagementSystemTest {
 		assertEquals(expected,actual);
 	}
 	
+	@Test
+	public void firstnameDuplicates() {
+		Account Godwin = new Account("Godwin","Adeleke",2);
+		Account Godwin2 = new Account("Godwin","lastname",2);
+		Account Gani = new Account("Abdilgani","Abdullah",3);
+		service.addAccount(Godwin);
+		service.addAccount(Godwin2);
+		service.addAccount(Gani);
+		int expectedValue = 2;
+		int actualValue = service.getfirstnameDuplicate("Godwin");
+	}
 }
