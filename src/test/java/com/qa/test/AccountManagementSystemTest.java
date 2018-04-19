@@ -64,14 +64,15 @@ public class AccountManagementSystemTest {
 	}
 	
 	@Test
-	public void firstnameDuplicates() {
+	public void firstNameDuplicates() {
 		Account Godwin = new Account("Godwin","Adeleke",2);
 		Account Godwin2 = new Account("Godwin","lastname",2);
 		Account Gani = new Account("Abdilgani","Abdullah",3);
 		service.addAccount(Godwin);
 		service.addAccount(Godwin2);
 		service.addAccount(Gani);
-		int expectedValue = 2;
-		int actualValue = service.getfirstnameDuplicate("Godwin");
+		int expectedValue = 1;
+		int actualValue = service.getFirstNameDuplicate("Godwin");
+		assertEquals(expectedValue,actualValue);
 	}
 }
