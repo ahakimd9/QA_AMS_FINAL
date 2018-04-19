@@ -13,10 +13,9 @@ public class Service {
 		}
 		else {
 			accountMap.put(account.getAccountNumber(),account);
-		}
-		
-		
+		}	
 	}
+	
 	public Account getAccount(Integer accountNumber) {
 		return accountMap.get(accountNumber);
 	}
@@ -29,13 +28,19 @@ public class Service {
 			System.out.println("This account does not exsit");
 		}
 	}
+	
 	public HashMap<Integer, Account> getAccountMap(){
 		return accountMap;
 	}
-	public int getfirstnameDuplicate(String string) {
-		// TODO Auto-generated method stub
-		return 0;
+	
+	public int getfirstnameDuplicate(String name) {
+		int count = 0;
+		for(Account account: accountMap.values()) {
+			if(account.getFirstName().equals(name)) {
+				++count;
+			}
+		}
+		return count; 
 	}
-		
 }
 

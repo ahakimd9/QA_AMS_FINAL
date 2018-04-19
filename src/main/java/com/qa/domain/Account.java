@@ -9,19 +9,14 @@ public class Account {
 	public Account(String firstName, String lastName, Integer accountNumber) {
 		this.firstName = firstName;
 		this.lastName = lastName;
-		this.accountNumber = accountNumber;
-		
-		
+		this.accountNumber = accountNumber;	
 	}
 
 	public Integer getAccountNumber() {
-		
 		return accountNumber;
 	}
 
 	public String getFirstName() {
 		return firstName;
 	}
-	
-	
 }

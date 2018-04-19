@@ -50,7 +50,7 @@ public class AccountManagementSystemTest {
 		Account expected = Ryan;
 		Account actual = service.getAccount(1);
 		assertEquals(expected,actual);
-}
+	}
 	
 	@Test
 	public void JSONconversionTest() {
